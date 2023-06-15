@@ -25,7 +25,7 @@ from tkinterdnd2 import TkinterDnD, DND_FILES
 from tkinter import filedialog , scrolledtext
 import tkinter.dnd as dnd
 
-
+      
 # Receive data as chunks and rebuild message.
 def data_recive(socket, size_of_header, chunk_prev_message, buffer_size=65536):
     # print(socket,"--socket")
@@ -137,14 +137,15 @@ def take_screenshot(screenshot_list, cli_width, cli_height, border_width=5, bord
     while capture:
         screenshot = sct.grab(mon)
         pil_image_obj = Image.frombytes("RGB", screenshot.size, screenshot.bgra, "raw", "BGRX")
-        # print("inside take screenshot function")
-        # Add border to the image
-        bordered_image = Image.new('RGB', (cli_width + 2*border_width, cli_height + 2*border_width), border_color)
+
+            # Add border to the image
+        bordered_image = Image.new('RGB', (cli_width + 2 * border_width, cli_height + 2 * border_width), border_color)
         bordered_image.paste(pil_image_obj, (border_width, border_width))
-        
+
         buffer = BytesIO()
         bordered_image.save(buffer, format='jpeg', quality=20)
-        screenshot_list.put(lz4.frame.compress(buffer.getvalue()))
+        compressed_data = lz4.frame.compress(buffer.getvalue())
+        screenshot_list.put(compressed_data)
         buffer.close()
 
 
@@ -183,7 +184,7 @@ def screen_sending():
     print(f"cli_width, cli_height {cli_width, cli_height}")
     resolution_msg = bytes(str(cli_width) + "," + str(cli_height), "utf-8")
     send_data(client_socket_remote, 2, resolution_msg)
-    
+     
     screenshot_sync_queue = Queue(1)
     process1 = Process(target=take_screenshot, args=(screenshot_sync_queue, cli_width, cli_height), daemon=True)
     process1.start()
@@ -193,7 +194,7 @@ def screen_sending():
 
     process3 = Process(target=event_recived, args=(client_socket_remote, PATH))
     process3.start()
-
+  
 
 def socket_listener_create(server_ip, port):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -228,12 +229,12 @@ def reset_ui():
     local_ip_text.configure(state="normal")
     password_text.configure(state="normal")
     password_text.delete(0, "end")
-
+      
 
 def start_listining(option_value):
     global client_socket_remote, server_socket, PASSWORD, login_thread, password_entered_time
 
-    # Disable buttons
+         # Disable buttons
     start_btn.configure(state=tk.DISABLED)
     radio_btn.configure(state=tk.DISABLED)
     connection_frame.grid_forget()
@@ -258,8 +259,8 @@ def start_listining(option_value):
         password_text.configure(font=normal_font, state='disabled')
         password_text.grid(row=3, column=1, sticky=tk.W, pady=2)
         stop_btn.grid(row=4, column=0, columnspan=2, sticky=tk.N, pady=(30, 2))
-    # elif option_value == 2:
-        # screen_sharing()
+        # elif option_value == 2:
+            # screen_sharing()
 
     server_socket = socket_listener_create(server_ip, 1234)
     login_thread = Thread(target=login_to_connect, args=(server_socket,), name="login_thread", daemon=True)
@@ -272,18 +273,19 @@ def start_listining(option_value):
     # Start the password expiration checking thread
     expiration_thread = Thread(target=check_password_expiration, daemon=True)
     expiration_thread.start()
-
+   
 
 def is_password_expired():
-    global password_entered_time,client_socket_remote,server_socket,PASSWORD,login_thread
+    global password_entered_time,client_socket_remote,server_socket,PASSWORD,login_thread,IS_CLIENT_CONNECTED
 
     if password_entered_time is not None:
         elapsed_time = time.time() - password_entered_time
-        if elapsed_time >= 30 * 60:  # 30 minutes - if elapsed_time >= 30 * 60:  # 30 minutes
+        if elapsed_time >= 1* 60:  # 30 minutes - if elapsed_time >= 30 * 60:  # 30 minutes
             print("Password Expired")
             messagebox.showinfo("Password Expired", "Your password has expired. Please login again.")
             close_socket()
-            # Reset the global variables
+            root.destroy()
+            # stop_listining() 
             client_socket_remote = None
             server_socket = None
             PASSWORD = None
@@ -294,12 +296,14 @@ def is_password_expired():
 def check_password_expiration():
     while True:
         is_password_expired()
-        time.sleep(60)
-
+        time.sleep(2)
+        
 
 def stop_listining():
     global server_socket, client_socket_remote, url, file_client_socket
+    # global server_socket, client_socket_remote, url
     
+
     if IS_CLIENT_CONNECTED:
         result = messagebox.askquestion("Disconnect", "Are you sure you want to disconnect?")
         if result == 'yes':
@@ -336,8 +340,9 @@ def stop_listining():
     password_text.grid_forget()
     password_text.configure(state="normal")
     password_text.delete('1.0', tk.END)
-
-
+   
+    
+        
 def login_to_connect(sock):
     global command_client_socket, client_socket_remote, thread1, file_client_socket, IS_CLIENT_CONNECTED, f_thread, chat_client_socket
     
@@ -377,11 +382,12 @@ def login_to_connect(sock):
                     # Process the file name and content as needed
                     # f_thread = Thread(target=receive_files, name='save_file',daemon=True)  # if we uncomment it, it will get overlaped and recive file name 2 times 1-correct and 
                     # f_thread.start()                                                       #  2- data and when we call it for data its printing nothing
-                    
-                    # chat socket
+                  
                     chat_client_socket, address = sock.accept()
                     
                     IS_CLIENT_CONNECTED = True
+                  
+                  
                     # thread for chat
                     recv_chat_msg_thread = Thread(target=receive_message, name="recv_chat_msg_thread", daemon=True)
                     recv_chat_msg_thread.start()
@@ -409,6 +415,8 @@ def listinging_commands():
     try:
         while listen:
             msg = data_recive(command_client_socket, HEADER_COMMAND_SIZE, bytes(), 1024)[0].decode("utf-8")
+            # msg = msg.strip() 
+            
             print(f"Message received:{msg}")
             if msg == "start_capture" or msg == '        start':
                 print("start screen sending msg recive")
@@ -442,7 +450,7 @@ def screen_sending_client():
     client_socket_remote , address = server_socket.accept()
     cli_width, cli_height = ImageGrab.grab().size
     resolution_msg = bytes(str(cli_width) + "," + str(cli_height), "utf-8")
-    
+        
     data=send_data(client_socket_remote, 2, resolution_msg)
     print(f"resolution_msg{resolution_msg}")
     print(data)
@@ -453,37 +461,148 @@ def screen_sending_client():
 
     process2 = Process(target=take_from_list_and_send, args=(screenshot_sync_queue, client_socket_remote), daemon=True)
     process2.start()
- 
+    
+            
 forbidden_extensions = [".exe", ".dll"]
-def receive_files():
-    # Create a directory for receiving files (if not already present)
-    directory = os.path.join(os.getcwd(), 'Received')
-    os.makedirs(directory, exist_ok=True)
-    filename = file_client_socket.recv(1024).decode()
-    print('filename---',filename)
-    destination = os.path.join(directory, filename)
-   
-    with open(destination, 'wb') as file:
-        data = file_client_socket.recv(1024)
-        file.write(data)
-    print('File successfully received:', filename)
-    
-    extension = os.path.splitext(filename)[1].lower()
-    if extension in forbidden_extensions:
-        # Ask for confirmation to download forbidden file types
-        result = messagebox.askquestion("Download File", f"Are you sure you want to download the file: {filename}?\nDownloading forbidden file types (.exe, .dll) can be risky.")
-        if result != "yes":
-            print(f"Skipping file: {filename}")
-            return
-    
-    connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
+import shutil
+def receive_files():  #images properly but single
+    # file = file_client_socket.recv(1024).decode()
+    # if not os.path.exists("ReceivedFiles"):
+    #         os.makedirs("ReceivedFiles")
+    #         # Copy the file to the receiving directory
+    #         shutil.copy2(file, "ReceivedFiles")
+    # print("Files received and saved in the 'ReceivedFiles' directory.")
+    try:
+        while True:
+            filename = file_client_socket.recv(1024).decode('utf-8')
+            print('filename---', filename)
 
-    # Write the log message to a file
-    with open("connection_log.txt", "a") as file:
-        file.write(log_message)   
-   
+            directory = os.path.join(os.getcwd(), 'Received')
+            os.makedirs(directory, exist_ok=True)
+            
+            destination = os.path.join(directory, filename)
+            print(f'destination : {destination}')  
+            with open(destination, 'wb') as file:
+                data = file_client_socket.recv(1024)
+                print(f'data to be receive : {data}')
+                file.write(data)
+                time.sleep(2)
+                
+                while len(data) == 1024:
+                    data = file_client_socket.recv(1024)
+                    # print(f'data to be sent inside while : {data}')
+                    file.write(data)
+                    # time.sleep(2)  # Add time delay of 10 seconds between receiving chunks
+                
+                     
 
+            print('File successfully received:', filename)
+
+            connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
+
+            with open("connection_log.txt", "a") as file:
+                file.write(log_message)
+
+            messagebox.showinfo("File Received ", f"File '{filename}' received successfully!")
+
+            # time.sleep(2)  # Add time delay of 2 seconds after receiving a file
+
+    except Exception as e:
+        print(f"An error occurred in receive_files(): {str(e)}")
+   
+# counter = 0  # Counter variable
+
+# def receive_files():
+#     global counter  ,file_client_socket# Access the counter variable
+    
+#     try:
+#         while True:
+#             counter += 1  # Increment the counter
+#             filename = file_client_socket.recv(1024).decode()
+#             print('filename---', filename)
+
+#             directory = os.path.join(os.getcwd(), 'Received3')
+#             os.makedirs(directory, exist_ok=True)
+
+#             if not filename:
+#                 # If no filename is received, it means all files have been received
+#                 break
+
+#             destination = os.path.join(directory, filename)
+#             print(f'destination : {destination}')  
+#             with open(destination, 'wb') as file:
+#                 data = file_client_socket.recv(1024)
+#                 # print(f'data to be sent : {data}')
+#                 file.write(data)
+#                 time.sleep(2)
+                
+#                 while len(data) == 1024:
+#                     data = file_client_socket.recv(1024)
+#                     # print(f'data to be sent inside while : {data}')
+#                     file.write(data)
+#                     time.sleep(2)  # Add time delay of 10 seconds between receiving chunks
+
+#             print('File successfully received:', filename)
+
+#             connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#             log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
+
+#             with open("connection_log.txt", "a") as file:
+#                 file.write(log_message)
+
+#             messagebox.showinfo("File Received", f"File '{filename}' received successfully!")
+
+#             time.sleep(2)  # Add time delay of 2 seconds after receiving a file
+
+#     except Exception as e:
+#         print(f"An error occurred in receive_files(): {str(e)}")
+#     # Usage example
+#     # receive_files()  # Call the function
+# print("Function called", counter, "times.")    
+
+
+
+
+# def receive_files():
+#     try:
+#         while True:
+#             filename = file_client_socket.recv(1024).decode()
+#             print('filename---', filename)
+
+#             directory = os.path.join(os.getcwd(), 'Received2')
+#             os.makedirs(directory, exist_ok=True)
+
+#             if not filename:
+#                 # If no filename is received, it means all files have been received
+#                 break
+
+#             destination = os.path.join(directory, filename)
+
+#             with open(destination, 'wb') as file:
+#                 # while True:
+#                     data = file_client_socket.recv(1024)
+#                     # if not data:
+#                     #     break
+#                     file.write(data)
+
+#             print('File successfully received:', filename)
+
+#             connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#             log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
+
+#             with open("connection_log.txt", "a") as file:
+#                 file.write(log_message)
+
+#             messagebox.showinfo("File Received 1", f"File '{filename}' received successfully!")
+
+#             time.sleep(2)  # Add time delay of 2 seconds after receiving a file
+
+#     except Exception as e:
+#         print(f"An error occurred in receive_files(): {str(e)}")
+  
+  
+     
 def add_chat_display(msg,name):
     current_time = datetime.now().strftime("%H:%M")
     formatted_message = f"{msg} \n {current_time}"
@@ -505,7 +624,7 @@ def send_message():
     except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError) as e:
         print(e.strerror)
 
-
+        
 def receive_message():
     try:
         while True:
@@ -579,10 +698,10 @@ if __name__ == "__main__":
     label_note = tk.Label(listener_frame, anchor=tk.CENTER)
     label_note.grid(row=0, column=0, padx=200, pady=5, columnspan=2, sticky=tk.N)
     
-    heading_font = Font(family="Arial", size=17, weight="bold")
-    title_font = Font(family="Arial", size=14, weight='normal')
-    title_font_normal = Font(family="Arial", size=13, weight="bold")
-    normal_font = Font(family="Arial", size=13)
+    heading_font = Font(family="Verdana", size=17, weight="bold")
+    title_font = Font(family="Verdana", size=14, weight='normal')
+    title_font_normal = Font(family="Verdana", size=13, weight="bold")
+    normal_font = Font(family="Verdana", size=13)
 
     heading = tk.Label(listener_frame, text="Remote Control Access",font=heading_font ,bg='whitesmoke',fg='brown')  
     heading.place(x=150,y=43)  
@@ -614,12 +733,12 @@ if __name__ == "__main__":
     
    
     # Local IP Design
-    local_ip_label = tk.Label(details_frame, text="LOCAL IP       :", padx=5, pady=5 )
+    local_ip_label = tk.Label(details_frame, text="LOCAL IP      :", padx=5, pady=5 )
     local_ip_label.configure(font=title_font_normal,bg='whitesmoke',fg='brown')
     local_ip_text = tk.Text(details_frame, background="white",width=47, height=1,pady=5)
     
     # Password Design
-    password_label = tk.Label(details_frame, text="PASSWORD    :", padx=5, pady=5)
+    password_label = tk.Label(details_frame, text="PASSWORD   :", padx=5, pady=5)
     password_label.configure(font=title_font_normal,bg='whitesmoke',fg='brown')
     password_text = tk.Text(details_frame, background="white",width=47, height=1,pady=5)
 
@@ -636,7 +755,7 @@ if __name__ == "__main__":
     chat_frame = tk.LabelFrame(my_screen, padx=20, pady=20, bd=0 , width=50,height=5,background="aliceblue")
     chat_frame.grid(row=1, column=0, sticky=tk.N)
     
-    text_chat_tab = scrolledtext.ScrolledText(chat_frame, width=40, height=20,font=("Arial", 12),background="aliceblue")
+    text_chat_tab = scrolledtext.ScrolledText(chat_frame, width=40, height=20,font=("Verdana", 12),background="aliceblue")
     text_chat_tab.grid(row=0, column=0, sticky=tk.N)
     text_chat_tab.configure(state="disabled")
 
@@ -644,7 +763,7 @@ if __name__ == "__main__":
     input_text_frame.grid(row=1, column=0, sticky=tk.W)
 
     input_text_widget = tk.Entry(input_text_frame, width=40,background="mintcream" , highlightcolor="blue")
-    input_text_widget.configure(font=("arial", 14))
+    input_text_widget.configure(font=("Verdana", 14))
     input_text_widget.bind("<Return>", send_message)
     input_text_widget.grid(row=0, column=0, pady=10, sticky=tk.W)
 

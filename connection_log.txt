@@ -1,83 +1,525 @@
-Connection from 192.168.1.172 established at 2023-06-03 14:09:36
-Connection from 192.168.1.172 established at 2023-06-03 18:08:04
-Connection from 192.168.1.172 established at 2023-06-03 18:10:35
-Connection from 192.168.1.172 established at 2023-06-03 18:11:40
-Connection from 192.168.1.172 established at 2023-06-03 18:13:16
-Connection from 192.168.1.172 established at 2023-06-03 18:15:05
-background.png File successfully received from 192.168.1.172 at 2023-06-03 18:15:15
-Connection from 192.168.1.172 established at 2023-06-03 18:15:52
-Connection from 192.168.1.172 established at 2023-06-03 18:18:30
-Connection from 192.168.1.172 established at 2023-06-03 18:20:50
-Connection from 192.168.1.172 established at 2023-06-03 18:23:50
-Connection from 192.168.1.172 established at 2023-06-03 18:25:30
-Connection from 192.168.1.172 established at 2023-06-03 18:27:14
-Connection from 192.168.1.172 established at 2023-06-03 18:28:14
-Connection from 192.168.1.172 established at 2023-06-03 18:29:24
-Connection from 192.168.1.172 established at 2023-06-03 18:32:29
-Connection from 192.168.1.172 established at 2023-06-03 18:33:53
-Connection from 192.168.1.172 established at 2023-06-03 18:37:10
-Connection from 192.168.1.172 established at 2023-06-03 18:40:36
-Connection from 192.168.1.172 established at 2023-06-03 18:41:59
-Connection from 192.168.1.172 established at 2023-06-03 18:44:31
-Connection from 192.168.1.172 established at 2023-06-03 18:45:25
-Connection from 192.168.1.172 established at 2023-06-03 18:46:37
-theory.txt File successfully received from 192.168.1.172 at 2023-06-03 18:46:45
-Connection from 192.168.1.172 established at 2023-06-03 18:47:26
-Connection from 192.168.1.172 established at 2023-06-03 18:49:08
-Connection from 192.168.1.172 established at 2023-06-03 18:50:06
-Connection from 192.168.1.172 established at 2023-06-03 18:52:04
-Connection from 192.168.1.172 established at 2023-06-03 18:53:38
-Connection from 192.168.1.172 established at 2023-06-03 18:54:45
-Connection from 192.168.1.172 established at 2023-06-03 18:57:11
-Connection from 192.168.1.172 established at 2023-06-03 18:58:17
-TCP.txt File successfully received from 192.168.1.172 at 2023-06-03 18:59:08
-wired_wireless.txt File successfully received from 192.168.1.172 at 2023-06-03 18:59:08
-Connection from 192.168.1.172 established at 2023-06-03 18:59:49
-Connection from 192.168.1.188 established at 2023-06-05 12:24:47
-Connection from 192.168.1.170 established at 2023-06-05 12:43:53
-Connection from 192.168.1.170 established at 2023-06-05 12:49:56
-Connection from 192.168.1.170 established at 2023-06-05 12:59:46
-Connection from 192.168.1.170 established at 2023-06-05 13:59:04
-Connection from 192.168.1.170 established at 2023-06-05 14:31:42
-Connection from 192.168.1.170 established at 2023-06-05 14:34:01
-Connection from 192.168.43.140 established at 2023-06-05 14:36:51
-Connection from 192.168.43.140 established at 2023-06-05 14:41:33
-snake.py File successfully received from 192.168.43.140 at 2023-06-05 14:41:53
-Connection from 192.168.43.140 established at 2023-06-05 14:44:45
-Connection from 192.168.43.140 established at 2023-06-05 14:46:18
-Connection from 192.168.43.140 established at 2023-06-05 14:47:44
-Connection from 192.168.43.140 established at 2023-06-05 14:48:41
-theory.txt File successfully received from 192.168.43.140 at 2023-06-05 14:49:22
-Connection from 192.168.43.140 established at 2023-06-05 14:50:25
-btn.py File successfully received from 192.168.43.140 at 2023-06-05 14:50:31
-Connection from 192.168.43.140 established at 2023-06-05 14:53:42
-client.exe File successfully received from 192.168.43.140 at 2023-06-05 14:54:28
-Connection from 192.168.43.140 established at 2023-06-05 16:07:43
-Connection from 192.168.43.140 established at 2023-06-05 16:09:46
-connection_log.txt File successfully received from 192.168.43.140 at 2023-06-05 16:10:01
-Connection from 192.168.43.140 established at 2023-06-05 16:11:10
-versionfile.txt File successfully received from 192.168.43.140 at 2023-06-05 16:11:20
-Connection from 192.168.43.140 established at 2023-06-05 16:19:55
-versionfile.txt File successfully received from 192.168.43.140 at 2023-06-05 16:20:06
-Connection from 192.168.1.170 established at 2023-06-06 11:32:59
-Connection from 192.168.1.170 established at 2023-06-06 11:33:41
-Connection from 192.168.1.170 established at 2023-06-06 11:34:29
-Connection from 192.168.1.170 established at 2023-06-06 11:37:20
-Connection from 192.168.1.170 established at 2023-06-06 11:38:29
-Connection from 192.168.1.170 established at 2023-06-06 11:39:02
-Connection from 192.168.1.170 established at 2023-06-06 12:46:58
-Connection from 192.168.1.170 established at 2023-06-06 12:54:34
-Connection from 192.168.1.170 established at 2023-06-06 12:55:26
-Connection from 192.168.1.170 established at 2023-06-06 12:57:32
-Connection from 192.168.1.170 established at 2023-06-06 12:58:54
-Connection from 192.168.1.170 established at 2023-06-06 12:59:36
-Connection from 192.168.1.170 established at 2023-06-06 13:43:01
-Connection from 192.168.43.140 established at 2023-06-06 13:49:14
-Connection from 192.168.43.140 established at 2023-06-07 11:58:22
-Connection from 192.168.43.140 established at 2023-06-07 12:00:17
-file.txt File successfully received from 192.168.43.140 at 2023-06-07 12:00:30
-Connection from 192.168.43.140 established at 2023-06-07 15:09:00
-Connection from 192.168.43.140 established at 2023-06-07 15:12:41
-Connection from 192.168.43.140 established at 2023-06-07 15:23:20
-Connection from 192.168.43.140 established at 2023-06-07 15:36:00
-Connection from 192.168.43.140 established at 2023-06-07 16:23:49
+Connection from 192.168.1.168 established at 2023-06-09 10:49:14
+snake.py File successfully received from 192.168.1.168 at 2023-06-09 10:49:22
+Connection from 192.168.1.190 established at 2023-06-09 11:52:28
+Connection from 192.168.1.168 established at 2023-06-09 11:58:23
+Connection from 192.168.1.168 established at 2023-06-09 12:01:01
+Connection from 192.168.1.168 established at 2023-06-09 12:02:55
+Connection from 192.168.1.168 established at 2023-06-09 12:04:17
+form.py File successfully received from 192.168.1.168 at 2023-06-09 12:04:26
+Connection from 192.168.1.168 established at 2023-06-09 12:06:03
+Connection from 192.168.1.168 established at 2023-06-09 12:08:38
+Connection from 192.168.1.168 established at 2023-06-09 12:12:18
+canvas.py File successfully received from 192.168.1.168 at 2023-06-09 12:12:27
+Connection from 192.168.1.168 established at 2023-06-09 12:16:35
+Connection from 192.168.1.168 established at 2023-06-09 12:54:09
+Connection from 192.168.1.168 established at 2023-06-09 12:55:45
+snake.py File successfully received from 192.168.1.168 at 2023-06-09 12:56:08
+Connection from 192.168.1.168 established at 2023-06-09 14:57:00
+Connection from 192.168.1.168 established at 2023-06-09 14:57:51
+Connection from 192.168.1.168 established at 2023-06-09 15:03:22
+Connection from 192.168.43.69 established at 2023-06-09 15:29:10
+Connection from 192.168.43.69 established at 2023-06-09 15:36:12
+Connection from 192.168.43.140 established at 2023-06-09 15:57:16
+Connection from 192.168.1.196 established at 2023-06-12 11:56:10
+Connection from 192.168.1.196 established at 2023-06-12 16:58:06
+Connection from 192.168.1.196 established at 2023-06-12 17:11:21
+download.txt File successfully received from 192.168.1.196 at 2023-06-12 17:11:39
+Connection from 192.168.1.196 established at 2023-06-12 17:14:46
+Connection from 192.168.1.196 established at 2023-06-12 17:47:49
+Connection from 192.168.1.196 established at 2023-06-12 18:02:00
+Connection from 192.168.1.196 established at 2023-06-12 18:04:56
+Connection from 192.168.1.196 established at 2023-06-12 18:06:59
+Connection from 192.168.1.196 established at 2023-06-12 18:16:21
+Connection from 192.168.1.196 established at 2023-06-12 18:23:07
+file.txt File successfully received from 192.168.1.196 at 2023-06-12 18:23:30
+canvas.py File successfully received from 192.168.1.196 at 2023-06-12 18:23:30
+Connection from 192.168.1.196 established at 2023-06-12 18:27:01
+dnd.png File successfully received from 192.168.1.196 at 2023-06-12 18:27:15
+Connection from 192.168.1.196 established at 2023-06-12 18:28:34
+btn.py File successfully received from 192.168.1.196 at 2023-06-12 18:28:44
+Connection from 192.168.1.196 established at 2023-06-12 18:30:23
+Connection from 192.168.1.196 established at 2023-06-12 18:57:56
+Connection from 192.168.1.196 established at 2023-06-12 18:58:56
+Connection from 192.168.1.196 established at 2023-06-12 18:59:59
+Connection from 192.168.43.140 established at 2023-06-13 10:37:37
+Connection from 192.168.43.140 established at 2023-06-13 10:39:42
+Connection from 192.168.43.140 established at 2023-06-13 10:40:55
+customtkinter.py File successfully received from 192.168.43.140 at 2023-06-13 10:41:13
+Connection from 192.168.43.140 established at 2023-06-13 10:41:48
+emai.py File successfully received from 192.168.43.140 at 2023-06-13 10:41:57
+Connection from 192.168.43.140 established at 2023-06-13 10:50:29
+Connection from 192.168.43.140 established at 2023-06-13 10:51:58
+download.txt File successfully received from 192.168.43.140 at 2023-06-13 10:52:11
+Connection from 192.168.43.140 established at 2023-06-13 10:54:56
+documentation_on_project.doc File successfully received from 192.168.43.140 at 2023-06-13 10:55:20
+Connection from 192.168.43.140 established at 2023-06-13 10:55:54
+screensharing.png File successfully received from 192.168.43.140 at 2023-06-13 10:56:08
+Connection from 192.168.43.140 established at 2023-06-13 10:57:25
+file-screen.png File successfully received from 192.168.43.140 at 2023-06-13 10:57:33
+Connection from 192.168.43.140 established at 2023-06-13 10:58:25
+Connection from 192.168.43.140 established at 2023-06-13 10:59:21
+canvas.py File successfully received from 192.168.43.140 at 2023-06-13 10:59:34
+Connection from 192.168.43.140 established at 2023-06-13 11:00:10
+ss.png File successfully received from 192.168.43.140 at 2023-06-13 11:00:19
+Connection from 192.168.43.140 established at 2023-06-13 11:03:35
+Connection from 192.168.43.140 established at 2023-06-13 11:06:10
+Connection from 192.168.43.140 established at 2023-06-13 11:07:41
+Connection from 192.168.43.140 established at 2023-06-13 11:08:40
+Connection from 192.168.43.140 established at 2023-06-13 11:11:57
+wallpaper.png File successfully received from 192.168.43.140 at 2023-06-13 11:12:10
+Connection from 192.168.43.140 established at 2023-06-13 11:15:04
+Connection from 192.168.43.140 established at 2023-06-13 11:17:42
+Connection from 192.168.43.140 established at 2023-06-13 11:21:27
+Connection from 192.168.43.140 established at 2023-06-13 11:22:18
+Connection from 192.168.43.140 established at 2023-06-13 11:22:57
+theory.txt File successfully received from 192.168.43.140 at 2023-06-13 11:23:10
+Connection from 192.168.43.140 established at 2023-06-13 11:26:59
+{local_file_path} File successfully received from 192.168.43.140 at 2023-06-13 11:27:14
+Connection from 192.168.43.140 established at 2023-06-13 11:31:10
+requirements.txt File successfully received from 192.168.43.140 at 2023-06-13 11:31:26
+Connection from 127.0.0.1 established at 2023-06-13 11:33:08
+theory.txt File successfully received from 127.0.0.1 at 2023-06-13 11:33:23
+Connection from 192.168.43.140 established at 2023-06-13 11:43:47
+canvas.py File successfully received from 192.168.43.140 at 2023-06-13 11:43:59
+Connection from 192.168.43.140 established at 2023-06-13 11:48:21
+client_try.py File successfully received from 192.168.43.140 at 2023-06-13 11:48:41
+Connection from 192.168.43.140 established at 2023-06-13 11:55:05
+connection_log.txt File successfully received from 192.168.43.140 at 2023-06-13 11:55:15
+Connection from 192.168.43.140 established at 2023-06-13 11:59:04
+Connection from 192.168.43.140 established at 2023-06-13 12:00:08
+client_connection_log.txt File successfully received from 192.168.43.140 at 2023-06-13 12:00:21
+Connection from 192.168.43.140 established at 2023-06-13 12:08:15
+Connection from 192.168.43.140 established at 2023-06-13 12:08:55
+Connection from 192.168.43.140 established at 2023-06-13 12:11:07
+Connection from 192.168.43.140 established at 2023-06-13 12:14:28
+index.html File successfully received from 192.168.43.140 at 2023-06-13 12:14:39
+Connection from 192.168.43.140 established at 2023-06-13 12:15:50
+index.html File successfully received from 192.168.43.140 at 2023-06-13 12:16:03
+Connection from 192.168.43.140 established at 2023-06-13 12:17:32
+index.html File successfully received from 192.168.43.140 at 2023-06-13 12:17:41
+Connection from 192.168.43.140 established at 2023-06-13 12:20:06
+helpers.py File successfully received from 192.168.43.140 at 2023-06-13 12:20:14
+Connection from 192.168.43.140 established at 2023-06-13 12:21:38
+Connection from 192.168.43.140 established at 2023-06-13 12:23:20
+FTP.txt File successfully received from 192.168.43.140 at 2023-06-13 12:23:37
+Connection from 192.168.43.140 established at 2023-06-13 12:25:10
+snake.py File successfully received from 192.168.43.140 at 2023-06-13 12:25:23
+Connection from 192.168.43.140 established at 2023-06-13 12:26:51
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-13 12:27:08
+Connection from 192.168.43.140 established at 2023-06-13 12:29:46
+theory.txt File successfully received from 192.168.43.140 at 2023-06-13 12:30:01
+Connection from 192.168.43.140 established at 2023-06-13 12:32:33
+pooja.txt File successfully received from 192.168.43.140 at 2023-06-13 12:32:58
+Connection from 192.168.43.140 established at 2023-06-13 12:34:00
+download.txt File successfully received from 192.168.43.140 at 2023-06-13 12:34:12
+Connection from 192.168.43.140 established at 2023-06-13 12:36:13
+Connection from 192.168.43.140 established at 2023-06-13 12:40:24
+pyGetWindow.txt File successfully received from 192.168.43.140 at 2023-06-13 12:40:42
+Connection from 192.168.43.140 established at 2023-06-13 12:42:07
+download.txt File successfully received from 192.168.43.140 at 2023-06-13 12:42:18
+Connection from 192.168.43.140 established at 2023-06-13 12:45:21
+wired_wireless.txt File successfully received from 192.168.43.140 at 2023-06-13 12:45:36
+Connection from 192.168.43.140 established at 2023-06-13 12:48:46
+Connection from 192.168.43.140 established at 2023-06-13 12:49:54
+theory.txt File successfully received from 192.168.43.140 at 2023-06-13 12:50:04
+Connection from 192.168.43.140 established at 2023-06-13 12:51:20
+Connection from 192.168.43.140 established at 2023-06-13 12:53:35
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-13 12:53:42
+Connection from 192.168.43.140 established at 2023-06-13 12:59:39
+Connection from 192.168.43.140 established at 2023-06-13 13:42:46
+wired_wireless.txt File successfully received from 192.168.43.140 at 2023-06-13 13:43:07
+Connection from 192.168.43.140 established at 2023-06-13 13:43:46
+client_connection_log.txt File successfully received from 192.168.43.140 at 2023-06-13 13:44:03
+Connection from 192.168.43.140 established at 2023-06-13 13:44:46
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-13 13:45:00
+Connection from 192.168.43.140 established at 2023-06-13 13:46:51
+Connection from 192.168.43.140 established at 2023-06-13 13:59:20
+Connection from 192.168.43.140 established at 2023-06-13 14:04:33
+Connection from 192.168.43.140 established at 2023-06-13 14:06:35
+Connection from 192.168.43.140 established at 2023-06-13 14:10:14
+Connection from 192.168.43.140 established at 2023-06-13 14:12:57
+canvas.py File successfully received from 192.168.43.140 at 2023-06-13 14:13:07
+Connection from 192.168.43.140 established at 2023-06-13 14:17:38
+dnd.png File successfully received from 192.168.43.140 at 2023-06-13 14:17:55
+Connection from 192.168.43.140 established at 2023-06-13 14:20:24
+pooja.txt File successfully received from 192.168.43.140 at 2023-06-13 14:20:35
+Connection from 192.168.43.140 established at 2023-06-13 14:21:57
+o File successfully received from 192.168.43.140 at 2023-06-13 14:22:13
+s File successfully received from 192.168.43.140 at 2023-06-13 14:23:00
+Connection from 192.168.43.140 established at 2023-06-13 14:24:07
+os_io.txt File successfully received from 192.168.43.140 at 2023-06-13 14:24:52
+Connection from 192.168.43.140 established at 2023-06-13 14:27:35
+customtkinter.py File successfully received from 192.168.43.140 at 2023-06-13 14:27:57
+Connection from 192.168.43.140 established at 2023-06-13 14:29:15
+emai.py File successfully received from 192.168.43.140 at 2023-06-13 14:29:26
+Connection from 192.168.43.140 established at 2023-06-13 14:59:20
+file.txt File successfully received from 192.168.43.140 at 2023-06-13 14:59:38
+Connection from 192.168.43.140 established at 2023-06-14 10:21:01
+download.txt File successfully received from 192.168.43.140 at 2023-06-14 10:21:14
+Connection from 192.168.43.140 established at 2023-06-14 10:43:34
+FTP.txt File successfully received from 192.168.43.140 at 2023-06-14 10:43:43
+Connection from 192.168.43.140 established at 2023-06-14 10:44:58
+theory.txt File successfully received from 192.168.43.140 at 2023-06-14 10:45:06
+Connection from 192.168.43.140 established at 2023-06-14 10:57:57
+FTP.txt File successfully received from 192.168.43.140 at 2023-06-14 10:58:07
+Connection from 192.168.43.140 established at 2023-06-14 11:00:10
+pooja.txt File successfully received from 192.168.43.140 at 2023-06-14 11:00:21
+Connection from 192.168.43.140 established at 2023-06-14 11:04:38
+btn.py File successfully received from 192.168.43.140 at 2023-06-14 11:04:49
+Connection from 192.168.43.140 established at 2023-06-14 11:14:39
+wired_wireless.txt File successfully received from 192.168.43.140 at 2023-06-14 11:15:21
+Connection from 192.168.43.140 established at 2023-06-14 11:17:24
+btn.py File successfully received from 192.168.43.140 at 2023-06-14 11:17:49
+Connection from 192.168.43.140 established at 2023-06-14 11:20:03
+wired_wireless.txt File successfully received from 192.168.43.140 at 2023-06-14 11:20:38
+Connection from 192.168.43.140 established at 2023-06-14 11:23:54
+Connection from 192.168.43.140 established at 2023-06-14 11:25:30
+Connection from 192.168.43.140 established at 2023-06-14 11:27:47
+Connection from 192.168.43.140 established at 2023-06-14 11:30:33
+Connection from 192.168.43.140 established at 2023-06-14 11:41:10
+Connection from 192.168.43.140 established at 2023-06-14 11:42:35
+Connection from 127.0.0.1 established at 2023-06-14 11:47:21
+Connection from 127.0.0.1 established at 2023-06-14 11:56:32
+Connection from 127.0.0.1 established at 2023-06-14 12:01:51
+Connection from 192.168.43.140 established at 2023-06-14 12:10:15
+Connection from 192.168.43.140 established at 2023-06-14 12:12:07
+pooja.txt File successfully received from 192.168.43.140 at 2023-06-14 12:12:18
+Connection from 192.168.43.140 established at 2023-06-14 12:13:35
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-14 12:13:49
+Connection from 192.168.43.140 established at 2023-06-14 12:15:33
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-14 12:15:45
+Connection from 192.168.43.140 established at 2023-06-14 12:17:19
+theory.txt File successfully received from 192.168.43.140 at 2023-06-14 12:17:30
+Connection from 192.168.43.140 established at 2023-06-14 12:19:18
+Connection from 192.168.43.140 established at 2023-06-14 12:20:39
+wired_wireless.txt File successfully received from 192.168.43.140 at 2023-06-14 12:20:49
+Connection from 192.168.43.140 established at 2023-06-14 12:22:20
+Connection from 192.168.43.140 established at 2023-06-14 12:23:17
+pooja.txt File successfully received from 192.168.43.140 at 2023-06-14 12:23:27
+Connection from 192.168.43.140 established at 2023-06-14 12:26:43
+serial_paraller.txt File successfully received from 192.168.43.140 at 2023-06-14 12:27:02
+Connection from 192.168.43.140 established at 2023-06-14 12:30:19
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-14 12:30:33
+Connection from 192.168.43.140 established at 2023-06-14 12:33:12
+os_io.txt File successfully received from 192.168.43.140 at 2023-06-14 12:33:22
+Connection from 192.168.43.140 established at 2023-06-14 12:34:17
+wired_wireless.txt File successfully received from 192.168.43.140 at 2023-06-14 12:35:28
+Connection from 192.168.43.140 established at 2023-06-14 12:37:37
+btn.py File successfully received from 192.168.43.140 at 2023-06-14 12:37:47
+Connection from 192.168.43.140 established at 2023-06-14 12:40:56
+Connection from 192.168.43.140 established at 2023-06-14 12:42:09
+theory.txt File successfully received from 192.168.43.140 at 2023-06-14 12:42:25
+Connection from 192.168.43.140 established at 2023-06-14 12:44:06
+{local_file_path} File successfully received from 192.168.43.140 at 2023-06-14 12:44:21
+Connection from 192.168.43.140 established at 2023-06-14 12:46:11
+FTP.txt File successfully received from 192.168.43.140 at 2023-06-14 12:47:10
+Connection from 192.168.43.140 established at 2023-06-14 12:50:37
+FTP.txt File successfully received from 192.168.43.140 at 2023-06-14 12:50:52
+Connection from 192.168.43.140 established at 2023-06-14 12:53:37
+pyGetWindow.txt File successfully received from 192.168.43.140 at 2023-06-14 12:53:51
+Connection from 192.168.43.140 established at 2023-06-14 12:54:47
+Connection from 192.168.43.140 established at 2023-06-14 12:56:20
+Connection from 192.168.43.140 established at 2023-06-14 12:57:27
+chat_log.txt File successfully received from 192.168.43.140 at 2023-06-14 12:57:47
+Connection from 192.168.43.140 established at 2023-06-14 13:55:03
+multiprocessing.txt File successfully received from 192.168.43.140 at 2023-06-14 13:55:20
+Connection from 192.168.1.180 established at 2023-06-14 14:05:16
+pooja.txt File successfully received from 192.168.1.180 at 2023-06-14 14:05:31
+Connection from 192.168.1.180 established at 2023-06-14 14:08:33
+pyGetWindow.txt File successfully received from 192.168.1.180 at 2023-06-14 14:08:48
+Connection from 192.168.1.180 established at 2023-06-14 14:12:05
+snake.py File successfully received from 192.168.1.180 at 2023-06-14 14:12:28
+Connection from 192.168.1.180 established at 2023-06-14 14:14:49
+canvas.py File successfully received from 192.168.1.180 at 2023-06-14 14:15:06
+Connection from 192.168.1.180 established at 2023-06-14 14:17:07
+pooja.txt File successfully received from 192.168.1.180 at 2023-06-14 14:17:23
+Connection from 192.168.1.180 established at 2023-06-14 14:20:16
+canvas.py File successfully received from 192.168.1.180 at 2023-06-14 14:20:32
+Connection from 192.168.1.180 established at 2023-06-14 14:24:08
+emai.py File successfully received from 192.168.1.180 at 2023-06-14 14:24:22
+Connection from 192.168.1.180 established at 2023-06-14 14:29:30
+btn.py File successfully received from 192.168.1.180 at 2023-06-14 14:29:45
+Connection from 192.168.1.180 established at 2023-06-14 14:32:58
+snake.py File successfully received from 192.168.1.180 at 2023-06-14 14:33:18
+Connection from 192.168.1.180 established at 2023-06-14 14:48:26
+Connection from 192.168.1.180 established at 2023-06-14 14:50:11
+Connection from 192.168.1.180 established at 2023-06-14 15:00:21
+Connection from 192.168.1.180 established at 2023-06-14 15:08:17
+Connection from 192.168.1.180 established at 2023-06-14 15:10:24
+Connection from 192.168.1.180 established at 2023-06-14 15:17:57
+Connection from 192.168.1.180 established at 2023-06-14 15:19:13
+file-screen.png File successfully received from 192.168.1.180 at 2023-06-14 15:19:25
+Connection from 192.168.1.180 established at 2023-06-14 15:20:29
+remote-access.png File successfully received from 192.168.1.180 at 2023-06-14 15:20:40
+Connection from 192.168.1.180 established at 2023-06-14 15:21:30
+startlistening.png File successfully received from 192.168.1.180 at 2023-06-14 15:21:45
+Connection from 192.168.1.180 established at 2023-06-14 15:22:57
+Connection from 192.168.1.180 established at 2023-06-14 15:25:46
+remote-access.png File successfully received from 192.168.1.180 at 2023-06-14 15:26:00
+Connection from 192.168.1.180 established at 2023-06-14 15:51:44
+ss.png File successfully received from 192.168.1.180 at 2023-06-14 15:52:09
+Connection from 192.168.1.180 established at 2023-06-14 15:53:21
+multiprocessing.txt File successfully received from 192.168.1.180 at 2023-06-14 15:54:06
+Connection from 192.168.1.180 established at 2023-06-14 15:58:41
+download.txt File successfully received from 192.168.1.180 at 2023-06-14 15:59:03
+Connection from 192.168.1.180 established at 2023-06-14 16:19:17
+wired_wireless.txt File successfully received from 192.168.1.180 at 2023-06-14 16:19:32
+Connection from 192.168.1.180 established at 2023-06-14 16:24:34
+os_io.txt File successfully received from 192.168.1.180 at 2023-06-14 16:25:01
+Connection from 192.168.1.180 established at 2023-06-14 16:28:07
+canvas.py File successfully received from 192.168.1.180 at 2023-06-14 16:28:23
+Connection from 192.168.1.180 established at 2023-06-14 16:31:06
+FTP.txt File successfully received from 192.168.1.180 at 2023-06-14 16:31:22
+Connection from 192.168.1.180 established at 2023-06-14 16:40:31
+download.txt File successfully received from 192.168.1.180 at 2023-06-14 16:40:50
+Connection from 192.168.1.180 established at 2023-06-14 16:43:48
+form.py File successfully received from 192.168.1.180 at 2023-06-14 16:44:08
+Connection from 192.168.1.180 established at 2023-06-14 16:45:33
+btn.py File successfully received from 192.168.1.180 at 2023-06-14 16:45:56
+Connection from 192.168.1.180 established at 2023-06-14 17:35:05
+{local_file_path} File successfully received from 192.168.1.180 at 2023-06-14 17:35:22
+Connection from 192.168.1.180 established at 2023-06-14 17:36:29
+multiprocessing.txt File successfully received from 192.168.1.180 at 2023-06-14 17:36:44
+Connection from 192.168.1.180 established at 2023-06-14 17:45:42
+Connection from 192.168.1.180 established at 2023-06-14 17:46:40
+Connection from 192.168.1.180 established at 2023-06-14 17:51:05
+Connection from 192.168.1.180 established at 2023-06-14 17:52:24
+Connection from 192.168.1.180 established at 2023-06-14 17:53:11
+Connection from 192.168.1.180 established at 2023-06-14 17:57:52
+FTP.txt File successfully received from 192.168.1.180 at 2023-06-14 17:58:02
+FTP or File Transfer Protocol is a common way to transfer files. For FTP, Python has a built in package called ftplib.
+1- Connect and login to an FTP server
+2- List directories and files
+3- Upload and download files
+
+
+Storbinary()
+Store a file in binary transfer mode. cmd should be an appropriate STOR command: "STOR filename". fp is a file object (opened in binary mode) which is read until EOF using its read() method
+
+retrbinary(cmd, callback, blocksize=8192, rest=None)
+Retrieve a file in binary transfer mode. cmd should be an appropriate RETR command: 'RETR filename'.
+
+dir()
+Produce a directory listing as returned by the LIST command, printing it to standard output.
+
+cwd(pathname)
+Set the current directory on the server.
+
+Method	Description
+pwd()-
+Current working directory.
+
+cwd()-
+Change current working directory to path.
+
+dir([path[,...[,cb]])-
+Displays directory listing of path. Optional call-back cb passed to retrlines().
+
+storlines(cmd, f)-
+Uploads text file using given FTP  File successfully received from 192.168.1.180 at 2023-06-14 17:58:08
+cmd - for example, STOR file name.
+
+storbinary(cmd,f[, bs=8192])-
+Similar to storlines() but is used for binary files.
+
+delete(path)-
+Deletes remote file located at path.
+
+mkd(directory)-
+Creates remote directory.
+
+connect(host[, port[, timeout]])-
+Connects to the given host and port. The default port number is 21, as specified by the FTP protocol..
+
+quit()-
+Closes connection and quits.
+download.txtMultiprocessing refers to the ability of a system to support more than one processor at the same time. Applications in a multiprocessing system are broken to smaller routines 
+that run independently. The operating system allocates these threads to the processors improving performance of the system.
+
+
+import multiprocessing
+  
+def print_cube(num):
+    """
+    function to print cube of given num
+    """
+    print("Cube: {}".format(num * num * num))
+  
+def print_square(num):
+    """
+    function to print square of given num
+    """
+    print("Square: {}".format(num * num))
+  
+if __nam File successfully received from 192.168.1.180 at 2023-06-14 17:58:10
+e__ == "__main__":
+    # creating processes
+    p1 = multiprocessing.Process(target=print_square, args=(10, ))
+    p2 = multiprocessing.Process(target=print_cube, args=(10, ))
+  
+    # starting process 1
+    p1.start()
+    # starting process 2
+    p2.start()
+  
+    # wait until process 1 is finished
+    p1.join()
+    # wait until process 2 is finished
+    p2.join()
+  
+    # both processes finished
+    print("Done!")
+
+
+target: the function to be executed by process
+args: the arguments to be passed to the target function
+
+p1 = multiprocessing.Process(target=print_square, args=(10, ))
+p2 = multiprocessing.Process(target=print_cube, args=(10, ))
+
+To start a process, we use start method of Process class.
+p1.start()
+p2.start()
+
+Once the processes start, the current program also keeps on executing. In order to stop execution of current program until a process is complete, we use join method.
+p1.join()
+p2.join() File successfully received from 192.168.1.180 at 2023-06-14 17:58:11
+Connection from 192.168.1.180 established at 2023-06-14 17:59:02
+pooja.txt File successfully received from 192.168.1.180 at 2023-06-14 17:59:11
+QAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQAQATYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYTYYYYYYYYYYYYYYYYYYYYYYYTTTTTTTTTTTTTTTTTTTTTTTTTQAAAAAAAAAAAAAAAAAAAQQQQQQQQQQQQQQQAAAAAAAAAAAAAAAAAAAAAQQQQQQQQQQQQQQAAAAAAAQQAAQAQQQQAQQQAQAAAAAAAAAAAAAAAAAAAAAAAAAAAWRETYwired_wireless.txt(a) Wired Network: 
+
+As we all know, “wired” refers to any physical medium made up of cables. Copper wire, twisted pair, or fiber optic cables are all options. 
+A wired network employs wires to link devices to the Internet or File successfully received from 192.168.1.180 at 2023-06-14 17:59:15
+ another network, such as laptops or desktop PCs.
+
+
+(b) Wireless Network: 
+
+“Wireless” means without wire, media that is made up of electromagnetic waves (EM Waves) or infrared waves. Antennas or sensors will be present on all wireless devices.
+Cellular phones, wireless sensors, TV remotes, satellite disc receivers, and laptops with WLAN cards are all examples of wireless devices. For data or voice communication,
+a wireless network uses radiofrequency waves rather than wires.
+
+(c) wireless vs wired
+
+                 wired                                                                                  wireless
+ 
+ 1      A wired network employs wires to link devices to the Internet                              “Wireless” means without wire, media that is made up of electromagnetic waves (EM Waves) 
+        or another network, such as laptops or desktop PCs.                                        or infrared waves. Antennas or sensors will be present on all wireless devices
+       
+ 2    File successfully received from 192.168.1.180 at 2023-06-14 17:59:19
+    Faster transmission speed                                                                  Slow transmission speed 
+ 3       Propagation delay is Low                                                                   Propagation delay is high
+ 4       More Secure & hence Reliable                                                               Less Secure & hence less Reliable 
+ 5       Devices must be hard-wired                                                                 Installation is Quick
+ 6       Less Expensive                                                                             More Expensive
+ 7       High installation & maintenance cost                                                       Low installation & maintenance cost 
+ 8       Hub, Switch, etc. devices are used                                                         Wireless routers, access points, etc. are used.
+ 
+
+Speed      Wired connections are usually faster than wireless connections.                           As well  File successfully received from 192.168.1.180 at 2023-06-14 17:59:20
+as interference, most wireless transmissions are encrypted. This introduces 
+           Signals carried over cables are less susceptible to interference so there                  a processing delay. 
+           are fewer errors.                                                                                         
+
+Security    Wired networks are more secure than wireless networks. Data is transmitted               Wireless networks are less secure than wired networks. Data can be intercepted by 
+           over physical cables, which are harder to tamper with in order to intercept               someone without them needing to be physically connected to the network.
+           messages.     
+
+Range     The range of a wired network is greater than wireless. Copper cable                      The range of a wireless network may be restricted because signals can be 
+          will reliably carry signals for up to 100m. Fibre optic cables are                       obstructed by thick walls and other obst File successfully received from 192.168.1.180 at 2023-06-14 17:59:22
+acles. A mesh of access points may 
+          capable of carrying network signals over distances of 100km or more.                     be needed to improve coverage
+
+Setup    Fixed cabling is inflexible. If a room layout is changed,                                Devices do not need to be used in a fixed location. They can be located 
+         the network connection points may no longer be in the correct place.                     anywhere within range of a wireless access point.
+
+Cost    Wired networks can be expensive to set up. Hubs or switches are                           More than one wireless access point may be needed if the building is 
+        required. In a work environment, these will probably have to be                           large or uses materials that block mobile signals.
+        located in secure rooms or lockable cabinets so they are not
+        tampered with. Cables will often need to be run in trunking
+        or in channels made into walls so that they are not unsightly or c File successfully received from 192.168.1.180 at 2023-06-14 17:59:23
+ause a health and safety issue.  
+                
+
+
+
+wireless protocol
+
+1. WI-Fi
+2.Bluetooth
+3.Zigbee range - 10-100m speed-250kbps 
+4.Z-Wave range- 30m max  supports control of up to 232 devices.
+5.Radio-frequency identification (RFID) range - 10cm to 200m
+6.Cellular long distance communication  range -35km to 200km 
+7.NB-IOT
+8.5G 
+9.NFC (Near Field Communication) -
+a protocol used for enabling simple and safe two-way interactions between electronic devices.
+ It has mostly smartphones based applications like allowing contactless payment transactions, 
+ accessing digital content and connecting various electronic devices.
+10.LoRaWAN (Long Range Wide Area Network)
+11.LTE (Long Term Evolution)
+
+
+
+wired protocol
+
+1.internal
+a. I2C stands for “Inter-integrated circuit” bus.
+b. Serial Peripheral Interface bus (SPI)
+
+2.external
+a. Ethernet 
+application - Cloud Computing
+Site to Site Access
+Video Applications
+Distributed Storage Area Networks
+CCTV
+Copper cable
+Fiber optic ca File successfully received from 192.168.1.180 at 2023-06-14 17:59:23
+ble
+
+b. (rs-232) Recommended Standard 232 
+c. RS-485
+computer and automation
+ model railway
+d. Universal Asynchronous Receiver Transmitter (UARC)
+e. USART 
+f. Universal Serial Bus (USB) File successfully received from 192.168.1.180 at 2023-06-14 17:59:25
+Connection from 192.168.1.180 established at 2023-06-14 18:01:14
+emai.py File successfully received from 192.168.1.180 at 2023-06-14 18:01:27
+C:/Users/Admin/Desktop/notes/NOTES/try/emai.pyC:/Users/Admin/Desktop/notes/NOTES/try/file.txtfile.txtC:/Users/Admin/Desktop/notes/NOTES/try/emai.pyC:/Users/Admin/Desktop/notes/NOTES/try/file.txt File successfully received from 192.168.1.180 at 2023-06-14 18:01:31
+Connection from 192.168.1.180 established at 2023-06-14 18:03:54
+emai.py File successfully received from 192.168.1.180 at 2023-06-14 18:04:13
+Connection from 192.168.1.180 established at 2023-06-14 18:07:34
+Connection from 192.168.1.180 established at 2023-06-14 18:10:18
+Connection from 192.168.1.180 established at 2023-06-14 18:25:12
+2 File successfully received from 192.168.1.180 at 2023-06-14 18:25:44
+Connection from 192.168.1.180 established at 2023-06-14 18:26:32
+multiprocessing.txt File successfully received from 192.168.1.180 at 2023-06-14 18:26:48
+Connection from 192.168.1.180 established at 2023-06-14 18:28:23
+canvas.py File successfully received from 192.168.1.180 at 2023-06-14 18:28:35
+Connection from 192.168.43.69 established at 2023-06-15 11:09:17
+Connection from 192.168.43.140 established at 2023-06-15 11:26:02
+Connection from 192.168.43.140 established at 2023-06-15 11:26:40
+Connection from 192.168.43.140 established at 2023-06-15 11:27:21
+Connection from 192.168.43.140 established at 2023-06-15 11:28:11
+Connection from 192.168.43.140 established at 2023-06-15 11:34:43
+Connection from 192.168.43.140 established at 2023-06-15 11:40:19
+Connection from 192.168.43.140 established at 2023-06-15 11:46:09
+Connection from 192.168.43.140 established at 2023-06-15 11:51:48
+Connection from 192.168.43.140 established at 2023-06-15 12:11:29
+Connection from 192.168.43.140 established at 2023-06-15 12:21:56
+Connection from 192.168.43.140 established at 2023-06-15 12:23:37
+Connection from 192.168.43.140 established at 2023-06-15 12:26:42
+Connection from 192.168.43.140 established at 2023-06-15 12:29:17
+Connection from 192.168.43.140 established at 2023-06-15 12:34:35
+Connection from 192.168.43.140 established at 2023-06-15 12:35:58
+Connection from 192.168.43.140 established at 2023-06-15 12:37:47
+Connection from 192.168.43.140 established at 2023-06-15 12:43:29
+Connection from 192.168.43.140 established at 2023-06-15 12:44:53
+Connection from 192.168.43.140 established at 2023-06-15 12:46:52
+Connection from 192.168.43.140 established at 2023-06-15 12:48:17
+Connection from 192.168.43.140 established at 2023-06-15 12:50:01
+Connection from 192.168.43.140 established at 2023-06-15 12:50:52
+Connection from 192.168.43.140 established at 2023-06-15 12:53:46

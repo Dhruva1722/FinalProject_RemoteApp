@@ -1,0 +1,19 @@
+{local_file_path}MFM & AVH (multi functional meter) :-
+
+it is used for measuring voltage,power, current, power factor and it tracks energy consumption.
+A multi-function meter is an electrical instrument installed in panels; this device measures various electrical parameters such as voltage, 
+current, power factor and active power. A multi-function meter is usually involved in settings which require an exact, reliable measure of electricity.
+mfm for measuring electrical values in three phase low and high voltage network.
+multifunction meter is used in energy consumption monitoring and can measure the three phases at once.
+Multi function energy meter refers to the watt-hour meter which has more than two functions, such as time-sharing and measurement demand, in
+addition to measuring active power (reactive power), and can display, store and output data, and has powerful data acquisition and processing 
+functions. Digital multifunction meter is suitable for all common power parameters, real-time power measurement, energy measurement and power quality analysis in power grid.
+CTR - control and relay panel / current transfer ratio
+PTR - 
+Communication
+Multifunction meters can transmit information about the circuit remotely and communicate with other devices. It’s possible due to electric standard RS-485 and communication protocols like MODBUS-RTU. In addition to transmitting information to servers on the cloud.
+
+
+Two variations of the MODBUS protocol exist:
+The MODBUS ASCII mode: where messages are transmitted as lines of hexadecimal codes
+The MODBUS RTU mode: where messages are directly transmitted as binary frames
