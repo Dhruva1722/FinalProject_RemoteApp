@@ -23,7 +23,7 @@ from datetime import datetime
 import shutil
 from tkinterdnd2 import TkinterDnD, DND_FILES
 from tkinter import filedialog , scrolledtext
-import tkinter.dnd as dnd
+import sqlite3
 
       
 # Receive data as chunks and rebuild message.
@@ -280,7 +280,7 @@ def is_password_expired():
 
     if password_entered_time is not None:
         elapsed_time = time.time() - password_entered_time
-        if elapsed_time >= 1* 60:  # 30 minutes - if elapsed_time >= 30 * 60:  # 30 minutes
+        if elapsed_time >= 30* 60:  # 30 minutes - if elapsed_time >= 30 * 60:  # 30 minutes
             print("Password Expired")
             messagebox.showinfo("Password Expired", "Your password has expired. Please login again.")
             close_socket()
@@ -344,7 +344,7 @@ def stop_listining():
     
         
 def login_to_connect(sock):
-    global command_client_socket, client_socket_remote, thread1, file_client_socket, IS_CLIENT_CONNECTED, f_thread, chat_client_socket
+    global command_client_socket, client_socket_remote, thread1, file_client_socket, IS_CLIENT_CONNECTED, f_thread, chat_client_socket,client_address
     
     accept = True
     try:
@@ -354,7 +354,7 @@ def login_to_connect(sock):
             
             label_status.configure(font=normal_font, text="Start listening", image=yellow)
             command_client_socket, address = sock.accept()
-
+            client_address = address[0]
             print(f"Received login request from {address[0]}...")
             if messagebox.askquestion("Login Request", f"Received login request from {address[0]}... Do you want to connect?") == 'yes':
 
@@ -362,12 +362,7 @@ def login_to_connect(sock):
                 print(f'received_password : {received_password}')
                 if received_password == PASSWORD:
                     send_data(command_client_socket, 2, bytes("1", "utf-8"))
-                    connection_time =datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                    log_message = f"Connection from {address[0]} established at {connection_time}\n"
-
-                    # Write the log message to a file
-                    with open("connection_log.txt", "a") as file:
-                        file.write(log_message)
+                    dataBase()
 
                     print("\n")
                     print(f"Connection from {address[0]} has been connected!")
@@ -377,11 +372,11 @@ def login_to_connect(sock):
                     thread1.start()
 
                     # Create a separate socket for file transfer
-                    file_client_socket, file_address = sock.accept()
+                    file_client_socket,address = sock.accept()
                     # print(f'File client socket listening on {file_address[0]}')
                     # Process the file name and content as needed
-                    # f_thread = Thread(target=receive_files, name='save_file',daemon=True)  # if we uncomment it, it will get overlaped and recive file name 2 times 1-correct and 
-                    # f_thread.start()                                                       #  2- data and when we call it for data its printing nothing
+                    f_thread = Thread(target=save_file, name='save_file',daemon=True)  # if we uncomment it, it will get overlaped and recive file name 2 times 1-correct and 
+                    f_thread.start()                                                       #  2- data and when we call it for data its printing nothing
                   
                     chat_client_socket, address = sock.accept()
                     
@@ -393,6 +388,8 @@ def login_to_connect(sock):
                     recv_chat_msg_thread.start()
                     
                     my_screen.add(chat_frame, text=" Chat ")
+                    
+                  
                     
                     accept = False
 
@@ -407,6 +404,31 @@ def login_to_connect(sock):
 
     except (ConnectionAbortedError, ConnectionResetError, OSError):
         label_status.configure(font=normal_font, text="Not Connected", image=red)
+
+
+def dataBase():
+    
+  # Connect to the SQLite database
+    conn = sqlite3.connect('server_data.db')
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+                CREATE TABLE IF NOT EXISTS connections_log (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                connection_time TEXT NOT NULL,
+                log_message TEXT NOT NULL
+                )
+                ''')
+    
+    connection_time =datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_message = f"Connection from {client_address} established at {connection_time}\n"
+
+    # Save the connection log data in the database
+    cursor.execute('INSERT INTO connections_log (connection_time,log_message) VALUES (?,?)', (connection_time,log_message))
+    conn.commit()
+    cursor.close()
+    
+
 
 
 def listinging_commands():
@@ -426,8 +448,7 @@ def listinging_commands():
             elif msg == 'screen_sharing' or msg == '        screen':
                 screen_sending_client() 
                 print("start screen shareing sending msg recive")   
-            elif msg == '        start_file_' or msg == 'start_file_explorer':
-                receive_files()    
+             
             elif msg == "disconnect":
                 listen = False
                 print("Disconnect message received")
@@ -462,149 +483,63 @@ def screen_sending_client():
     process2 = Process(target=take_from_list_and_send, args=(screenshot_sync_queue, client_socket_remote), daemon=True)
     process2.start()
     
+  
+def save_file_received_log(filename, data):
+    # Connect to the SQLite database
+    conn = sqlite3.connect('server_data.db')
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS file_received_logs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            filename TEXT NOT NULL,
+            receive_time TEXT NOT NULL,
+            client_address TEXT NOT NULL,
+            file_data BLOB
+        )
+    ''')
+    
+    receive_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    cursor.execute('INSERT INTO file_received_logs (client_address, filename, receive_time, file_data) VALUES (?,?,?,?)',
+                   (client_address, filename, receive_time, data))
+    conn.commit()
+    cursor.close()
+  
+  
             
-forbidden_extensions = [".exe", ".dll"]
-import shutil
-def receive_files():  #images properly but single
-    # file = file_client_socket.recv(1024).decode()
-    # if not os.path.exists("ReceivedFiles"):
-    #         os.makedirs("ReceivedFiles")
-    #         # Copy the file to the receiving directory
-    #         shutil.copy2(file, "ReceivedFiles")
-    # print("Files received and saved in the 'ReceivedFiles' directory.")
-    try:
-        while True:
-            filename = file_client_socket.recv(1024).decode('utf-8')
-            print('filename---', filename)
+def save_file():
+        file_name0 = file_client_socket.recv(1024)
+        file_name = file_name0.decode("utf-8")
+        print(f'File name: {file_name}')
 
-            directory = os.path.join(os.getcwd(), 'Received')
-            os.makedirs(directory, exist_ok=True)
-            
-            destination = os.path.join(directory, filename)
-            print(f'destination : {destination}')  
-            with open(destination, 'wb') as file:
+        if file_name.endswith(('.exe', '.dll', '.rar')):
+            response = messagebox.askquestion("Download Confirmation", "Do you want to download the file?")
+            if response == 'no':
+                print('File download not allowed:', file_name)
+                return
+
+        # Set the destination folder to save the file
+        directory = os.path.join(os.getcwd(), 'Received')
+        os.makedirs(directory, exist_ok=True)
+        destination = os.path.join(directory, file_name)
+
+        # Receive and save the file data
+        with open(destination, 'wb') as file:
                 data = file_client_socket.recv(1024)
-                print(f'data to be receive : {data}')
                 file.write(data)
                 time.sleep(2)
-                
                 while len(data) == 1024:
                     data = file_client_socket.recv(1024)
-                    # print(f'data to be sent inside while : {data}')
                     file.write(data)
-                    # time.sleep(2)  # Add time delay of 10 seconds between receiving chunks
                 
-                     
-
-            print('File successfully received:', filename)
-
-            connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
-
-            with open("connection_log.txt", "a") as file:
-                file.write(log_message)
-
-            messagebox.showinfo("File Received ", f"File '{filename}' received successfully!")
-
-            # time.sleep(2)  # Add time delay of 2 seconds after receiving a file
-
-    except Exception as e:
-        print(f"An error occurred in receive_files(): {str(e)}")
-   
-# counter = 0  # Counter variable
-
-# def receive_files():
-#     global counter  ,file_client_socket# Access the counter variable
-    
-#     try:
-#         while True:
-#             counter += 1  # Increment the counter
-#             filename = file_client_socket.recv(1024).decode()
-#             print('filename---', filename)
-
-#             directory = os.path.join(os.getcwd(), 'Received3')
-#             os.makedirs(directory, exist_ok=True)
-
-#             if not filename:
-#                 # If no filename is received, it means all files have been received
-#                 break
-
-#             destination = os.path.join(directory, filename)
-#             print(f'destination : {destination}')  
-#             with open(destination, 'wb') as file:
-#                 data = file_client_socket.recv(1024)
-#                 # print(f'data to be sent : {data}')
-#                 file.write(data)
-#                 time.sleep(2)
-                
-#                 while len(data) == 1024:
-#                     data = file_client_socket.recv(1024)
-#                     # print(f'data to be sent inside while : {data}')
-#                     file.write(data)
-#                     time.sleep(2)  # Add time delay of 10 seconds between receiving chunks
-
-#             print('File successfully received:', filename)
-
-#             connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#             log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
-
-#             with open("connection_log.txt", "a") as file:
-#                 file.write(log_message)
-
-#             messagebox.showinfo("File Received", f"File '{filename}' received successfully!")
-
-#             time.sleep(2)  # Add time delay of 2 seconds after receiving a file
-
-#     except Exception as e:
-#         print(f"An error occurred in receive_files(): {str(e)}")
-#     # Usage example
-#     # receive_files()  # Call the function
-# print("Function called", counter, "times.")    
+        print('File successfully received:', file_name)
+        messagebox.showinfo("File Received ", f"File '{file_name}' received successfully!")
+        # Write the log message to a file
+        save_file_received_log(file_name,data)
 
 
 
-
-# def receive_files():
-#     try:
-#         while True:
-#             filename = file_client_socket.recv(1024).decode()
-#             print('filename---', filename)
-
-#             directory = os.path.join(os.getcwd(), 'Received2')
-#             os.makedirs(directory, exist_ok=True)
-
-#             if not filename:
-#                 # If no filename is received, it means all files have been received
-#                 break
-
-#             destination = os.path.join(directory, filename)
-
-#             with open(destination, 'wb') as file:
-#                 # while True:
-#                     data = file_client_socket.recv(1024)
-#                     # if not data:
-#                     #     break
-#                     file.write(data)
-
-#             print('File successfully received:', filename)
-
-#             connection_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#             log_message = f"{filename} File successfully received from {socket.gethostbyname(socket.gethostname())} at {connection_time}\n"
-
-#             with open("connection_log.txt", "a") as file:
-#                 file.write(log_message)
-
-#             messagebox.showinfo("File Received 1", f"File '{filename}' received successfully!")
-
-#             time.sleep(2)  # Add time delay of 2 seconds after receiving a file
-
-#     except Exception as e:
-#         print(f"An error occurred in receive_files(): {str(e)}")
-  
-  
-     
-def add_chat_display(msg,name):
-    current_time = datetime.now().strftime("%H:%M")
+def add_chat_display(msg,name,current_time):
     formatted_message = f"{msg} \n {current_time}"
     text_chat_tab.configure(state=tk.NORMAL)
     text_chat_tab.insert(tk.END, "\n")
@@ -620,7 +555,12 @@ def send_message():
             input_text_widget.delete(0, "end")
             
             send_data(chat_client_socket, CHAT_HEADER_SIZE, bytes(msg, "utf-8"))
-            add_chat_display(msg, LOCAL_NAME)
+            
+            current_time = datetime.now().strftime("%H:%M:%S")
+            add_chat_display(msg, LOCAL_NAME, current_time)
+             # Save the message to the chat log file
+            save_chat_message(msg, LOCAL_NAME + ":", current_time)
+            
     except (BrokenPipeError, ConnectionAbortedError, ConnectionResetError, OSError) as e:
         print(e.strerror)
 
@@ -631,7 +571,14 @@ def receive_message():
             msg = data_recive(chat_client_socket, CHAT_HEADER_SIZE, bytes())[0].decode("utf-8")
             print("receive_message",msg)
 
-            add_chat_display(msg, REMOTE_NAME)
+            
+            current_time = datetime.now().strftime("%H:%M:%S")
+            add_chat_display(msg, REMOTE_NAME, current_time)
+
+            # Save the message to the chat log file
+            save_chat_message(msg, REMOTE_NAME + ":", current_time)
+
+            
             if not is_chat_window_open():
                 messagebox.showinfo("New Message", "You have a new message!")
             # text_chat_tab.tag_configure("green", foreground="green")
@@ -643,7 +590,29 @@ def receive_message():
 def is_chat_window_open():
     return chat_frame.winfo_exists() and chat_frame.winfo_viewable()
 
-
+# Function to save chat message in the database
+def save_chat_message(sender, message,timestamp):
+    conn = sqlite3.connect('server_data.db')
+    cursor = conn.cursor()
+    
+    # Create the table if it doesn't exist
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS chat_messages (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT,
+            sender TEXT ,
+            message TEXT  
+        )
+    ''')
+    
+    # Get the current timestamp
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Insert the chat message with the timestamp into the table
+    cursor.execute('INSERT INTO chat_messages (timestamp,sender, message) VALUES (?, ?, ?)', (timestamp,sender,message))
+    
+    conn.commit()
+    conn.close()
         
 if __name__ == "__main__":
     
@@ -672,7 +641,6 @@ if __name__ == "__main__":
     IS_CLIENT_CONNECTED = False
     LOCAL_NAME = "Me"
     REMOTE_NAME = "Remote"
-
     root = tk.Tk()
     root.title("Remote Box")
     root.resizable(False, False)
@@ -713,8 +681,7 @@ if __name__ == "__main__":
     send_window = tk.LabelFrame(my_screen,padx=100, pady=5, bd=0)
     send_window.configure(bg='#f4fdfe')
     # icon = tk.PhotoImage(file='assets/send.png')
-    
-    # btn = tk.Button(send_window,text='Receive',command=Ui_file).grid()
+
 
     radio_var = tk.IntVar()
     radio_var.set(1)
@@ -777,7 +744,8 @@ if __name__ == "__main__":
     
     my_screen.add(listener_frame, text=" Remote Access Connection")
     my_screen.add(chat_frame, text=" Chat ")
-    # my_screen.add(send_window,text=" File ")
+    my_screen.add(send_window,text=" File ")
     
     my_screen.hide(1)
+    my_screen.hide(2)
     root.mainloop()
